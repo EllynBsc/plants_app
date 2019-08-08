@@ -1,10 +1,14 @@
-<h1>Plants#new</h1>
-<p>Find me in app/views/plants/new.html.erb</p>
 
-<div class="container">
-<%= simple_form_for [@garden, @plant] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :image_url %>
-  <%= f.submit %>
-<% end %>
+
+<div class="container small-margin-top">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <h3>Add a plant to <%= @garden.name %></h3>
+      <%= simple_form_for [@garden, @plant] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :image_url %>
+      <%= f.submit class: 'btn btn-primary'%>
+    </div>
+    <% end %>
+  </div>
 </div>

@@ -1,0 +1,20 @@
+
+<div class="container">
+<h1>Details of <%= @plant.name %></h1>
+<% @plant.plant_tags.each do |plant_tag|%>
+
+  <h2>Tag_name: <%= plant_tag.tag.name %></h2>
+  <p>Description: <%= plant_tag.description %></p>
+  <p> <%= link_to 'destroy', plant_tag_path(plant_tag), method: :delete, data: { confirm: 'are you sure'}, class: 'btn btn-danger' %></p>
+
+
+  <% end %>
+
+
+<%= link_to "Add a plant_tag",  new_plant_plant_tag_path(@plant), class: 'btn btn-primary'%>
+<%= link_to @plant.garden.name, garden_path(@plant.garden), class: 'btn btn-primary' %>
+</div>
+<%#= @cocktail.doses.each do |dose| %>
+<%#= dose.description %>
+<%#= dose.ingredient.name %>
+<%# end %>
