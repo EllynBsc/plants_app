@@ -14,11 +14,11 @@
   <div class="row">
     <% @garden.plants.each do |plant| %>
     <div class="col-4">
-      <div class="card ">
-        <% if plant.image_url.present? %>
-        <%= image_tag plant.image_url, height: 300 %>
-        <% else %>
+      <div class="card">
+        <% if plant.image_url.nil? %>
         <p>no image</p>
+        <% else %>
+        <%= image_tag plant.image_url, height: 300 %>
         <% end %>
         <h3 class="text-center"><%= link_to plant.name, plant_path(plant) %></h3>
         <% plant.plant_tags.each do |plant_tag| %>
